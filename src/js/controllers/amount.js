@@ -31,14 +31,14 @@ angular.module('copayApp.controllers').controller('amountController', function($
       availableUnits = [];
 
       var hasBTCWallets = profileService.getWallets({
-        coin: 'btc'
+        coin: 'sprk'
       }).length;
 
       if (hasBTCWallets) {
         availableUnits.push({
-          name: 'Bitcoin',
-          id: 'btc',
-          shortName: 'BTC',
+          name: 'Sparklecoin',
+          id: 'sprk',
+          shortName: 'SPRK',
         });
       }
 
@@ -152,7 +152,7 @@ angular.module('copayApp.controllers').controller('amountController', function($
     $scope.isCordova = platformInfo.isCordova;
     unitToSatoshi = config.unitToSatoshi;
     satToUnit = 1 / unitToSatoshi;
-    satToBtc = 1 / 100000000;
+    satToBtc = 1 / 1000000;
     unitDecimals = config.unitDecimals;
 
     $scope.resetAmount();

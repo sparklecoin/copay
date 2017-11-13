@@ -241,7 +241,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
         var pendingBalanceAlternative = rateService.toFiat(cache.pendingAmount, cache.alternativeIsoCode, wallet.coin);
         var lockedBalanceAlternative = rateService.toFiat(cache.lockedBalanceSat, cache.alternativeIsoCode, wallet.coin);
         var spendableBalanceAlternative = rateService.toFiat(cache.spendableAmount, cache.alternativeIsoCode, wallet.coin);
-        var alternativeConversionRate = rateService.toFiat(100000000, cache.alternativeIsoCode, wallet.coin);
+        var alternativeConversionRate = rateService.toFiat(1000000, cache.alternativeIsoCode, wallet.coin);
 
         cache.totalBalanceAlternative = $filter('formatFiatAmount')(totalBalanceAlternative);
         cache.pendingBalanceAlternative = $filter('formatFiatAmount')(pendingBalanceAlternative);

@@ -181,14 +181,14 @@ angular.module('copayApp.services').factory('txFormatService', function($filter,
 
   root.parseAmount = function(coin, amount, currency) {
     var config = configService.getSync().wallet.settings;
-    var satToBtc = 1 / 100000000;
+    var satToBtc = 1 / 1000000;
     var unitToSatoshi = config.unitToSatoshi;
     var amountUnitStr;
     var amountSat;
     var alternativeIsoCode = config.alternativeIsoCode;
 
     // If fiat currency
-    if (currency != 'BCH' && currency != 'BTC' && currency != 'sat') {
+    if (currency != 'BCH' && currency != 'SPRK' && currency != 'sat') {
       amountUnitStr = $filter('formatFiatAmount')(amount) + ' ' + currency;
       amountSat = rateService.fromFiat(amount, currency, coin).toFixed(0);
     } else if (currency == 'sat') {

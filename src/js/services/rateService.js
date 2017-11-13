@@ -17,8 +17,8 @@ var RateService = function(opts) {
   self.httprequest = opts.httprequest; // || request;
   self.lodash = opts.lodash;
 
-  self.SAT_TO_BTC = 1 / 1e8;
-  self.BTC_TO_SAT = 1e8;
+  self.SAT_TO_BTC = 1 / 1e6;
+  self.BTC_TO_SAT = 1e6;
   self.UNAVAILABLE_ERROR = 'Service is not available - check for service.isAvailable() or use service.whenAvailable()';
   self.UNSUPPORTED_CURRENCY_ERROR = 'Currency not supported';
 

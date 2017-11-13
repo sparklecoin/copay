@@ -14,7 +14,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     // Bitcore wallet service URL
     bws: {
-      url: 'https://bws.bitpay.com/bws/api',
+      url: 'https://bws-testnet.sparklecoin.com/bws/api',
     },
 
     download: {
@@ -46,10 +46,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'BTC',
-        unitToSatoshi: 100000000,
-        unitDecimals: 8,
-        unitCode: 'btc',
+        unitName: 'SPRK',
+        unitToSatoshi: 1000000,
+        unitDecimals: 6,
+        unitCode: 'sprk',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
       }
@@ -76,7 +76,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     },
 
     release: {
-      url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
+      url: 'https://api.github.com/repos/sparklecoin/copay/releases/latest'
     },
 
     pushNotificationsEnabled: true,

@@ -45,7 +45,7 @@ angular.module('copayApp.controllers').controller('preferencesHistory',
 
         $scope.satToUnit = 1 / $scope.unitToSatoshi;
         var data = txs;
-        var satToBtc = 1 / 100000000;
+        var satToBtc = 1 / 1000000;
         $scope.csvContent = [];
         $scope.csvFilename = $scope.appName + '-' + $scope.wallet.name + '.csv';
         $scope.csvHeader = ['Date', 'Destination', 'Description', 'Amount', 'Currency', 'Txid', 'Creator', 'Copayers', 'Comment'];
@@ -78,7 +78,7 @@ angular.module('copayApp.controllers').controller('preferencesHistory',
             'Destination': it.addressTo || '',
             'Description': _note,
             'Amount': _amount,
-            'Currency': 'BTC',
+            'Currency': 'SPRK',
             'Txid': it.txid,
             'Creator': _creator,
             'Copayers': _copayers,
@@ -89,10 +89,10 @@ angular.module('copayApp.controllers').controller('preferencesHistory',
             var _fee = (it.fees * satToBtc).toFixed(8)
             $scope.csvContent.push({
               'Date': formatDate(it.time * 1000),
-              'Destination': 'Bitcoin Network Fees',
+              'Destination': 'Sparklecoin Network Fees',
               'Description': '',
               'Amount': '-' + _fee,
-              'Currency': 'BTC',
+              'Currency': 'SPRK',
               'Txid': '',
               'Creator': '',
               'Copayers': ''

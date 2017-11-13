@@ -331,7 +331,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
           }
         },
         params: {
-          coin: 'btc'
+          coin: 'sprk'
         }
       })
       .state('tabs.add.join', {
